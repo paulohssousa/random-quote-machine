@@ -1,38 +1,39 @@
+:root {
+  --dark-blue: hsl(230, 33%, 21%);
+  --pale-blue: hsl(231, 48%, 89%);
+  --pink: hsl(352, 93%, 84%);
+  --shadow-color: hsla(231, 27%, 25%, 0.637);
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
+  background-color:	var(--dark-blue);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.App-footer {
+  height: 5vh;
+  width: 100vw;
+  position: absolute;
+  top: 95vh;
+  padding-top: 10px;
+  background-color: var(--dark-blue);
+  color: hsl(230, 58%, 82%);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App-footer > a {
+  text-decoration: none;
+  color:var(--pink)
+}
+
+.App-footer > a:hover {
+  color: hsl(60, 100%, 100%);
 }

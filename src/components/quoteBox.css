@@ -1,0 +1,73 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css");
+
+#quote-box {
+    width: 40vw;
+    background-color: var(--pale-blue);
+    color: var(--dark-blue);
+    border: none;
+    border-radius: 5px;
+}
+
+#text {
+    font-size: larger;
+    padding: 30px;
+    padding-bottom: 0;
+    font-family: 'Karma', cursive;
+    font-size: 24px;
+}
+
+#author {
+    margin: 0 40px 10px 40px;
+    font-family: 'Tinos', cursive;
+    color: var(--dark-blue);
+}
+
+#new-quote {
+    font-family: 'Rasa', cursive;
+    font-size: 24px;
+    padding: 0 10px;
+    background-color:	var(--dark-blue);
+    color: var(--pale-blue);
+    border: none;
+    box-shadow: 6px 6px 10px var(--shadow-color);
+}
+
+#tweet-quote {
+    font-family: 'Rasa', cursive;
+    font-size: 24px;
+    background-color: var(--dark-blue);
+    color: var(--pale-blue);
+    border: none;
+    padding: 0 10px;
+    box-shadow: 6px 6px 10px var(--shadow-color);
+}
+
+#tweet-quote:hover{
+    background-color: var(--pink);
+    color:var(--dark-blue);
+}
+
+#new-quote:hover{
+    background-color: var(--pink);
+    color: var(--dark-blue);
+}
+
+#twitter-logo {
+    margin: auto;
+    font-size: 16px;
+    padding-right: 5px;
+}
+
+#quotation-mark {
+    font-size: 24px;
+    padding-right: 10px;
+    color:var(--pink);
+}
+
+@media screen and (max-width: 412px) {
+    #quote-box {
+        width: 98vw;
+        padding: 0;
+        margin: 0;
+    }
+}
