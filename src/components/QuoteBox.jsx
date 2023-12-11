@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import './quoteBox.css'
+import { useCallback } from "react";
 
 export default function QuoteBox() {
 
-    const [quote, setQuote] = useState('');
+    const [quote, setQuote] = useState('A face');
     const [author, setAuthor] = useState('');
 
     const url = 'https://api.api-ninjas.com/v1/quotes?category=death';
-    const myInit = {
-        method: "GET",
-    headers: { 'X-Api-Key': `${process.env.REACT_APP_API_KEY}` }
-    }
-
-    const fetchData = async() => {
+ 
+    const fetchData = useCallback( async() => {
         try {
-            fetch(url, myInit)
+            fetch(url, {
+                method: "GET",
+                headers: { 'X-Api-Key': `${process.env.REACT_APP_API_KEY}` }
+            })
                 .then(response => response.json())
                 .then(data => {
                     setQuote(data[0].quote);
@@ -23,14 +23,15 @@ export default function QuoteBox() {
         } catch (error) {
             console.log("error", error);
         }
-    };
-
+    }, [])
+    
     useEffect(() => {
         fetchData();
-    }, [])
+    }, [fetchData]);
 
+    
     return (
-        <div id="quote-box" className="card p-0">
+        <div id="quote-box">
             <p id="text"><i id="quotation-mark" className="bi bi-quote"></i>{ quote }</p>
             <div id="author" className="text-end fw-bold fs-4">- { author }</div>
             <div className="d-flex justify-content-end m-3">
